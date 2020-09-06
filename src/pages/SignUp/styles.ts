@@ -23,22 +23,9 @@ export const Content = styled.div`
     text-align: center;
     
     h1 {
-      margin-bottom: 24px;
+      margin-bottom: 16px;
     }
-    
-    a {
-      color: #F4EDE8;
-      display: block;
-      margin-top: 24px;
-      text-decoration: none;
-      transition: color 0.2s;
       
-      &:hover {
-        color: ${shade(0.2, "#F4EDE8")};
-      }
-      
-    }
-    
   }
   
   > a {
