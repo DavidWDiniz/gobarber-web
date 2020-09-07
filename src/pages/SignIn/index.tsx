@@ -19,7 +19,7 @@ interface SignInFormData {
 const SignIn: React.FC = () => {
     const formRef = useRef<FormHandles>(null);
 
-    const {signIn} = useContext(AuthContext);
+    const {user, signIn} = useContext(AuthContext);
 
     const handleSubmit = useCallback(async (data: SignInFormData) => {
         try {
@@ -28,7 +28,7 @@ const SignIn: React.FC = () => {
                 email: Yup.string().required("E-mail obrigatório").email("Digite um e-mail válido"),
                 password: Yup.string().required("Senha obrigatória"),
             });
-            console.log(await schema.validate(data, {abortEarly: false}));
+            await schema.validate(data, {abortEarly: false});
             await signIn({
                 email: data.email,
                 password: data.password,
