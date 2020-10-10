@@ -1,11 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 
 import logoImg from "../../assets/logo.svg";
-import {Container, Header, HeaderContent, Profile, Content, Schedule, NextAppointment, Calendar} from "./styles";
+import {Container, Header, HeaderContent, Profile, Content, Schedule, NextAppointment, Section, Appointment, Calendar} from "./styles";
 import {FiClock, FiPower} from "react-icons/all";
 import {useAuth} from "../../hooks/auth";
 
 const Dashboard: React.FC = () => {
+    const [selectedData, setSelectedDate] = useState(new Date());
     const {user, signOut} = useAuth();
     return (
         <Container>
@@ -43,6 +44,43 @@ const Dashboard: React.FC = () => {
                             </span>
                         </div>
                     </NextAppointment>
+                    <Section>
+                        <strong>Manhã</strong>
+                        <Appointment>
+                            <span>
+                                <FiClock />
+                                8:00
+                            </span>
+                            <div>
+                                <img src="https://e7.pngegg.com/pngimages/790/843/png-clipart-avatar-aang-aang-zuko-azula-katara-korra-aang-human-cartoons.png" alt="avatar" />
+                                <strong>Avatar</strong>
+                            </div>
+                        </Appointment>
+
+                        <Appointment>
+                            <span>
+                                <FiClock />
+                                8:00
+                            </span>
+                            <div>
+                                <img src="https://e7.pngegg.com/pngimages/790/843/png-clipart-avatar-aang-aang-zuko-azula-katara-korra-aang-human-cartoons.png" alt="avatar" />
+                                <strong>Avatar</strong>
+                            </div>
+                        </Appointment>
+                    </Section>
+                    <Section>
+                        <strong>Tarde</strong>
+                        <Appointment>
+                            <span>
+                                <FiClock />
+                                8:00
+                            </span>
+                            <div>
+                                <img src="https://e7.pngegg.com/pngimages/790/843/png-clipart-avatar-aang-aang-zuko-azula-katara-korra-aang-human-cartoons.png" alt="avatar" />
+                                <strong>Avatar</strong>
+                            </div>
+                        </Appointment>
+                    </Section>
                 </Schedule>
                 <Calendar>
 
