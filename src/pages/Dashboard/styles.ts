@@ -54,8 +54,13 @@ export const Profile = styled.div`
       color: #F4EDE8;
     }
     
-    strong {
+    a {
+      text-decoration: none;
       color: #FF9000;
+      
+      &:hover {
+        opacity: 0.8;
+      }
     }
   }
   
@@ -250,8 +255,7 @@ export const Calendar = styled.aside`
     color: #fff;
   }
   
-  .DayPicker:not(.DayPicker--interactionDisabled)
-  .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
+  .DayPicker:not(.DayPicker--interactionDisabled) .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
     background: ${shade(0.2, '#3e3b47')};
   }
   
